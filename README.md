@@ -2,27 +2,45 @@
 
 Kyle Cordes, Oasis Digital
 
+## Why another AOT example repo?
+
+The purposes of this repo:
+
+* Show some functionality, not just a trivial example to prove the
+  build works.
+* Use a template with variables from the component code, to see
+  differences needed for Closure.
+* Gather questions, so I can expand the explanation here and in
+  comments.
+
+Please open issues in this example if there are aspects of the code or
+configuration that are not sufficiently well explained and comments or
+in this README.
+
 ## Background
 
-Most Angular users treated AOT as a future curiosity when Angular
-reached production release in the summer of 2016. As of late fall 2016
-though, many (particularly those working on larger applications) have
-been much more eager and interested.
+Most Angular users have treated AOT as a future curiosity since
+Angular reached production release in the summer of 2016.  But as
+Angular has been successfully used on substantial projects, there is a
+greater and greater impetus for attention on build tooling to produce
+a smaller output.
 
 At the same time, there were various technical limitations and how
 well AOT could work early on, some of them related to the CommonJS
 package format ubiquitous on NPM.
 
-Fortunately, the tools and libraries have matured greatly, making it
-much easier than before to get results with AOT. Further, Angular
-itself has matured greatly, and AOT runs more quickly and produce a
-smaller output than ever before. At the same time, the Angular core
-team has recently started shipping the libraries and formats more and
-more suitable for efficient production bundling, with tree shaking,
-with AOT.
+Fortunately:
+
+* The Angular team has made many improvements to the core product that
+  particularly help it work better with Closure.
+* Tools and libraries have matured greatly, making it
+  much easier than before to get results with AOT.
+* Angular AOT Has matured greatly, running more quickly and producing
+  faster running output.
 
 This repo demonstrates a **short tool stack**, essentially just AOT
-and Closure Compiler.
+and Closure Compiler. This tool stack is much more fragile than the
+Angular CLI, but also worthy of a look for some projects.
 
 ## Kit
 
@@ -68,19 +86,17 @@ ES2015 modules - the same as the new Angular es2015 FESM packaging.
 
 <https://github.com/angular/angular/blob/master/CHANGELOG.md#es2015-builds>
 
-This means "flat ES2015 modules containing ES2105 code". "Flat" means
-that the numerous separate files that comprise the Angular source code
-have been combined into a single large file per major Angular library,
-removing all the overhead of how those modules would have had to be
-wired together at run time otherwise.
+ES2015 FESM means "flat ES2015 modules containing ES2105 code".
 
-There is also a packaging included which uses these type of "FESM"
-modules, but with ES5 code inside. We picked the most advanced option
-for optimal processing. Closure can do a better job with more
-information, and that information is more present using the latest
-packaging and source code format.
+"Flat" means that the numerous separate files that comprise the
+Angular source code have been combined into a single large file per
+major Angular library, removing all the overhead of how those modules
+would have had to be wired together at run time otherwise.
 
-### RxJS as ES2016 modules
+There is also an ES5 FESM packaging included, but ES2015 FESM is the
+best fit for Closure,
+
+### RxJS as ES2015 modules
 
 Currently RxJS does not yet ship in the form of ES2015 modules, so
 this project has a workaround to build them locally. Most likely such
@@ -115,9 +131,9 @@ start char".
 ### Brotli
 
 Brotli is the new gzip - the top-of-the-line choice for compressing
-web assets for wen download, understood by most or all modern
-browsers. By adding a step using Brotli, we can see immediately how
-small the compiled compressed JavaScript results are.
+web assets for web download, understood by most or all modern
+browsers. By using Brotli, we can see how small the compiled
+compressed JavaScript "on the wire" will be.
 
 `brew install brotli` (or whatever, for your OS)
 
@@ -140,9 +156,6 @@ The output size:
 -rw-------+ 1 kcordes  staff    8273 Mar  8 22:09 www/zone.min.js.br
 ```
 
-The .br files represent the approximate network transfer amount when
-operating at scale with file served using Brotli compression.
-
 This application uses several of the Angular main modules, and various
 RxJS operators. The resulting JavaScript "on the wire" is 48K bytes.
 This seems quite satisfactory.
@@ -154,5 +167,5 @@ yarn run explore
 ```
 
 Unfortunately, a consequence of using Angular as FESM is that each
-major Angular library (for example "core") appears is just a single
+major Angular library (for example "core") appears as just a single
 entry in this map.
