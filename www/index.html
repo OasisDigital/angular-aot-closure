@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Angular AOT+Closure Example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="brand-logo left">
+          <a href="https://angularbootcamp.com"></a>
+          <span>Angular AOT+Closure Example</span>
+        </div>
+        <div class="right">
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+
+      <div class="col l8">
+        <reddit-images>loading...</reddit-images>
+      </div>
+
+      <div class="col l4">
+        <h5>Explanation</h5>
+        <p>This example program is from the curriculum at
+          <a href="https://angularbootcamp.com/">Angular Boot Camp</a>,
+          an in-depth Angular class offered by
+          <a href="https://oasisdigital.com/">Oasis Digital</a>.
+        </p>
+
+        <p>The project is compiled using:</p>
+        <ul class="collection">
+          <li class="collection-item">AOT / ngc</li>
+          <li class="collection-item">the new
+            <a href="https://github.com/angular/angular/blob/master/CHANGELOG.md#es2015-builds">ES2015
+            ESM packaging</a> of the Angular libraries</li>
+          <li class="collection-item">Ad-hoc compiled ES2015 modules for RxJS.</li>
+          <li class="collection-item">Google Clojure Compiler (Java edition)</a>
+          </li>
+        </ul>
+
+        <p>Unlike most/all other tool chains, this one is mostly Google (aside from RxJS).</p>
+
+        <p>See the project README for more explanation.</p>
+
+        <p>In this example, we use Observable operators to efficiently and
+          correctly call a remote API. The API chosen is a Reddit image
+          search. <b>To use it, edit the search string field</b> contents
+          with something like "meow".</p>
+
+        <p>In the browser JavaScript console, you can see messages as the
+          search criteria change, you can see the change denounced, and
+          see the results return.</p>
+      </div>
+    </div>
+    <script src="zone.min.js"></script>
+    <script src="bundle.min.js"></script>
+  </body>
+</html>
