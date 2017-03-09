@@ -134,18 +134,18 @@ Then experiment with the application in your browser.
 The output size:
 
 ```
--rw-r--r--+ 1 kcordes  staff  149974 Mar  8 10:50 www/bundle.min.js
--rw-------+ 1 kcordes  staff   39767 Mar  8 10:50 www/bundle.min.js.br
--rw-r--r--+ 1 kcordes  staff   28578 Mar  8 10:50 www/zone.min.js
--rw-------+ 1 kcordes  staff    8273 Mar  8 10:50 www/zone.min.js.br
+-rw-r--r--+ 1 kcordes  staff  150890 Mar  8 22:09 www/bundle.min.js
+-rw-------+ 1 kcordes  staff   40027 Mar  8 22:09 www/bundle.min.js.br
+-rw-r--r--+ 1 kcordes  staff   28578 Mar  8 22:09 www/zone.min.js
+-rw-------+ 1 kcordes  staff    8273 Mar  8 22:09 www/zone.min.js.br
 ```
 
 The .br files represent the approximate network transfer amount when
 operating at scale with file served using Brotli compression.
 
 This application uses several of the Angular main modules, and various
-RxJS operators. The resulting JavaScript "on the wire" is 48,040
-bytes. This seems quite satisfactory.
+RxJS operators. The resulting JavaScript "on the wire" is 48K bytes.
+This seems quite satisfactory.
 
 To understand where the bytes come from:
 
