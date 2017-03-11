@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+yarn
+
 # Cleanup past runs
 rm -rf app/aot
 rm -rf www/materialize

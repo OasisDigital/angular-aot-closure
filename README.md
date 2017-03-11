@@ -46,10 +46,7 @@ Angular CLI, but also worthy of a look for some projects.
 
 Here are the libraries and elements used in this example.
 
-### Angular 4.0.0-rc.2
-
-As of the end of February 2013, this is the very latest, and it is
-also the first release to ship with the new packaging of libraries.
+### Angular 4.0.0-rc.3
 
 Angular 4 AOT both compiles and executes more quickly and with smaller
 size than Angular 2. This alone should provide ample motivation for
@@ -140,7 +137,6 @@ compressed JavaScript "on the wire" will be.
 ## Results
 
 ```
-yarn
 ./aot-build.sh
 yarn start
 ```
@@ -150,10 +146,10 @@ Then experiment with the application in your browser.
 The output size:
 
 ```
--rw-r--r--+ 1 kcordes  staff  150890 Mar  8 22:09 www/bundle.min.js
--rw-------+ 1 kcordes  staff   40027 Mar  8 22:09 www/bundle.min.js.br
--rw-r--r--+ 1 kcordes  staff   28578 Mar  8 22:09 www/zone.min.js
--rw-------+ 1 kcordes  staff    8273 Mar  8 22:09 www/zone.min.js.br
+-rw-r--r--+ 1 kcordes  staff  149610 Mar 11 09:43 www/bundle.min.js
+-rw-------+ 1 kcordes  staff   39958 Mar 11 09:43 www/bundle.min.js.br
+-rw-r--r--+ 1 kcordes  staff   29813 Mar 11 09:43 www/zone.min.js
+-rw-------+ 1 kcordes  staff    8605 Mar 11 09:43 www/zone.min.js.br
 ```
 
 This application uses several of the Angular main modules, and various
