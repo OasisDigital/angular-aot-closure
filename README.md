@@ -148,10 +148,10 @@ Then experiment with the application in your browser.
 The output size:
 
 ```
--rw-r--r--+ 1 kcordes  staff  149610 Mar 11 09:43 www/bundle.min.js
--rw-------+ 1 kcordes  staff   39958 Mar 11 09:43 www/bundle.min.js.br
--rw-r--r--+ 1 kcordes  staff   29813 Mar 11 09:43 www/zone.min.js
--rw-------+ 1 kcordes  staff    8605 Mar 11 09:43 www/zone.min.js.br
+-rw-r--r--+ 1 kcordes  staff  151650 Mar 17 07:25 www/bundle.min.js
+-rw-------+ 1 kcordes  staff   40480 Mar 17 07:25 www/bundle.min.js.br
+-rw-r--r--+ 1 kcordes  staff   33009 Mar 17 07:25 www/zone.min.js
+-rw-------+ 1 kcordes  staff    9035 Mar 17 07:25 www/zone.min.js.br
 ```
 
 This application uses several of the Angular main modules, and various
