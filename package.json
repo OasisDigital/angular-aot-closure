@@ -1,12 +1,18 @@
 {
-  "name": "@oasisdigital/angular-aot-es2015-rollup",
+  "name": "@oasisdigital/angular-aot-closure",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf app/aot www/materialize \"www/*.js\" \"www/bundle.*\" \"www/*.map\" \"www/*.br\" rxjs built build",
+    "rxjs": "ngc -p tsconfig.rxjs-es6-closure.json",
+    "ngc": "ngc",
+    "closure": "./closure.sh",
+    "assets": "./assets.sh",
+    "build": "run-s clean rxjs ngc closure assets",
+    "test": "run-s build",
     "start": "live-server --no-browser www",
-    "build": "./aot-build.sh",
     "explore": "source-map-explorer www/bundle.min.js www/bundle.min.js.map"
   },
   "author": "Kyle Cordes <kyle.cordes@oasisdigital.com>",
@@ -30,6 +36,8 @@
   "devDependencies": {
     "@angular/compiler-cli": "4.0.0-rc.3",
     "google-closure-compiler": "^20170218.0.0",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1",
     "rxjs-src": "git+https://github.com/ReactiveX/rxjs.git#5.1.1",
     "source-map-explorer": "^1.3.3",
     "typescript": "2.1.5"

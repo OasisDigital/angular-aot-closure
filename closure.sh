@@ -1,25 +1,6 @@
 #!/bin/bash
 set -e
 
-yarn
-
-# Cleanup past runs
-rm -rf app/aot
-rm -rf www/materialize
-rm -f www/*.js
-rm -f www/bundle.*
-rm -f www/*.map
-rm -f www/*.br
-rm -rf rxjs
-rm -rf built
-rm -rf build
-
-# Local ES2015 module build of RxJS
-./node_modules/.bin/ngc -p tsconfig.rxjs-es6-closure.json
-
-# AOT and TypeScript compile the application code
-./node_modules/.bin/ngc
-
 # Tree-shake, ES2015->ES5 and minify with Clojure Compiler.
 OPTS=(
   "--language_in=ES6_STRICT"
@@ -68,18 +49,3 @@ OPTS=(
 closureFlags=$(mktemp)
 echo ${OPTS[*]} > $closureFlags
 java -jar node_modules/google-closure-compiler/compiler.jar --flagfile $closureFlags
-
-# Minimum polyfill: just Zone.
-# Reflect has been handled Ahead Of Time
-cp node_modules/zone.js/dist/zone.min.js www
-
-# Gather CSS
-cp -R node_modules/materialize-css/dist www/materialize
-
-# Use Brotli, if available, to see the best-case network transfer size
-if hash bro 2>/dev/null; then
-  bro --input www/bundle.min.js --output www/bundle.min.js.br
-  bro --input www/zone.min.js --output www/zone.min.js.br
-  echo "AOT output size"
-  ls -l www/*.js www/*.js.br
-fi

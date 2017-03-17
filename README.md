@@ -1,5 +1,7 @@
 # Angular 4 AOT Example with es2015 ESM and Closure Compiler
 
+[![Build Status](https://travis-ci.org/OasisDigital/angular-aot-closure.svg?branch=master)](https://travis-ci.org/OasisDigital/angular-aot-closure)
+
 Kyle Cordes, Oasis Digital
 
 ## Why another AOT example repo?
@@ -136,7 +138,8 @@ compressed JavaScript "on the wire" will be.
 ## Results
 
 ```
-./aot-build.sh
+yarn
+yarn run build
 yarn start
 ```
 
