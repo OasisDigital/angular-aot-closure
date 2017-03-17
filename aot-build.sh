@@ -15,7 +15,7 @@ rm -rf built
 rm -rf build
 
 # Local ES2015 module build of RxJS
-./node_modules/.bin/tsc -p tsconfig.rxjs-es6.json
+./node_modules/.bin/ngc -p tsconfig.rxjs-es6-closure.json
 
 # AOT and TypeScript compile the application code
 ./node_modules/.bin/ngc

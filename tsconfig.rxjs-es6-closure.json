@@ -3,5 +3,8 @@
   "compilerOptions": {
     "declaration": false,
     "outDir": "rxjs"
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true
   }
 }

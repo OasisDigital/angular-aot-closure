@@ -46,7 +46,7 @@ Angular CLI, but also worthy of a look for some projects.
 
 Here are the libraries and elements used in this example.
 
-### Angular 4.0.0-rc.3
+### Angular 4.0.0 (RC)
 
 Angular 4 AOT both compiles and executes more quickly and with smaller
 size than Angular 2. This alone should provide ample motivation for
@@ -95,10 +95,9 @@ best fit for Closure,
 
 ### RxJS as ES2015 modules
 
-Currently RxJS does not yet ship in the form of ES2015 modules, so
-this project has a workaround to build them locally. Most likely such
-modules will be forthcoming from the RxJS project in the future,
-eliminating the need for this workaround.
+Currently RxJS does not yet ship in the form of ES2015 modules; and if
+it did, most likely it won't include Closure annotations. Therefore it
+is compiled to ES2015-in-ES2015 with Closure support, locally here.
 
 ### Closure Compiler (Java edition)
 

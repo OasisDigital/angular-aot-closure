@@ -25,13 +25,13 @@
     "live-server": "^1.2.0",
     "materialize-css": "^0.98.0",
     "rxjs": "5.2.0",
-    "zone.js": "0.8.0"
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "4.0.0-rc.3",
     "google-closure-compiler": "^20170218.0.0",
     "rxjs-src": "git+https://github.com/ReactiveX/rxjs.git#5.1.1",
     "source-map-explorer": "^1.3.3",
-    "typescript": "2.2.1"
+    "typescript": "2.1.5"
   }
 }
